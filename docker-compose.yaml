@@ -1,0 +1,15 @@
+version : '1'
+services : 
+  frontend : 
+    image : leelavamsikrishna/frontend_image:latest
+    ports : 
+      - '3000:3000'
+    depends_on : 
+      - backend
+  backend : 
+    image : leelavamsikrishna/backend_image:latest
+    ports :
+      - '4000:4000'
+    environment : 
+      - MONGO_URL=mongodb+srv://leelavamsikrishna:OAWDMTEPKaAq0qXN@krishna.jlriiuy.mongodb.net/doctorapp
+      - JWT=123456789
